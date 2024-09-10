@@ -17,7 +17,7 @@ const handleWhatsAppClick = (event) => {
 
 
 function App() {
-
+  ReactGA.initialize('G-KEV0Q9Z80R')
 
   return (
     <div className="App">
