@@ -19,7 +19,7 @@ const handleWhatsAppClick = (event) => {
 
 function App() {
   useEffect(() => {
-      ReactGA.initialize(TRACKING_ID)
+      ReactGA.initialize(TRACKING_ID, { debug: true })
   }, [])
 
   return (
