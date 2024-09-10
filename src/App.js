@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ReactGA from 'react-ga4';
-import { useEffect } from 'react';
-const TRACKING_ID = 'G-KEV0Q9Z80R'
+
 const handleWhatsAppClick = (event) => {
   event.preventDefault();
   console.log("WhatsApp button clicked");
@@ -18,9 +17,7 @@ const handleWhatsAppClick = (event) => {
 
 
 function App() {
-  useEffect(() => {
-      ReactGA.initialize(TRACKING_ID, { debug: true })
-  }, [])
+
 
   return (
     <div className="App">
