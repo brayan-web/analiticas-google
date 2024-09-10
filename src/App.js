@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          probando analiticas de google
         </p>
         <a
           className="App-link"
@@ -18,6 +18,10 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <a href="https://wa.me/522212311313" class="float" target="_blank" id="whatsapp-in-public" >
+      <i class="fa fa-whatsapp my-float"></i>
+    </a>
     </div>
   );
 }
