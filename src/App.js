@@ -1,6 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import ReactGA from 'react-ga';
 
+const handleWhatsAppClick = (event) => {
+  event.preventDefault();
+  console.log("WhatsApp button clicked");
+  ReactGA.event({
+    category: 'Button',
+    action: 'click',
+    label: 'whatsapp_button'
+  });
+  window.open('https://wa.me/527861345980', '_blank');
+}
 function App() {
   return (
     <div className="App">
@@ -19,7 +30,7 @@ function App() {
         </a>
       </header>
 
-      <a href="https://wa.me/522212311313" class="float" target="_blank" id="whatsapp-in-public" >
+      <a href="https://wa.me/522212311313" class="float" target="_blank" id="whatsapp-in-public" onClick={handleWhatsAppClick}>
       <i class="fa fa-whatsapp my-float"></i>
     </a>
     </div>
