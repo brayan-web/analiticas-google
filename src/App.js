@@ -18,7 +18,9 @@ function App() {
 };
 
 const handlePurchaseClick = (total) => {
-  TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', total);
+  const decimalTotal = parseFloat(total).toFixed(2);
+  TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', decimalTotal);
+  console.log(`Processing payment of $${decimalTotal}`);
 };
   return (
     <div className="App">
