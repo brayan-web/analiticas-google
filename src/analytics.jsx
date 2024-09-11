@@ -8,7 +8,7 @@ const InitializeGoogleAnalytics = () => {
 };
 
 const TrackGoogleAnalitycsEvent = (category, action , label, value  ) => {
-    console.log("GA event:", category, ":", action, ":", label);
+    console.log("GA event:", category, ":", action, ":", label, ":", value);
 
     ReactGA4.event({
         category: category,

@@ -8,19 +8,16 @@ import { useState } from 'react';
 
 function App() {
   const [total, setTotal] = useState(350.00); 
-  const handleTestClick = () => {
-    // Aquí llamas a la función de seguimiento de eventos
-    TrackGoogleAnalitycsEvent('Button', 'Click', 'Prueba Button');
-  };
+ 
 
   const TrackWhatsAppClick = () => {
     TrackGoogleAnalitycsEvent('WhatsApp', 'Interaction', 'Clicked WhatsApp Button');
 };
 
 const handlePurchaseClick = (total) => {
-  const decimalTotal = parseFloat(total).toFixed(2);
-  TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', decimalTotal);
-  console.log(`Processing payment of $${decimalTotal}`);
+
+  TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', total);
+  console.log(`Processing payment of $${total}`);
 };
   return (
     <div className="App">
