@@ -14,10 +14,18 @@ function App() {
     TrackGoogleAnalitycsEvent('WhatsApp', 'Interaction', 'Clicked WhatsApp Button');
 };
 
-const handlePurchaseClick = (total) => {
+const handlePurchaseClick = () => {
+  // Genera un número aleatorio entre 1 y 50 para cambiar el valor total
+  const randomIncrement = (Math.random() * 50).toFixed(2);
+  const newTotal = (parseFloat(total) + parseFloat(randomIncrement)).toFixed(2);
 
-  TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', total);
-  console.log(`Processing payment of $${total}`);
+  // Actualiza el total con el nuevo valor
+  setTotal(newTotal);
+
+  // Asegúrate de enviar el nuevo valor del total a Google Analytics
+  TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', parseFloat(newTotal));
+
+  console.log(`Processing payment of $${newTotal}`);
 };
 
 const simulatePriceChange = () => {
@@ -43,10 +51,8 @@ const simulatePriceChange = () => {
         </a>
         <button onClick={TrackWhatsAppClick}>click her</button>
         <h2>Total: ${total}</h2>
-        <button onClick={() => {
-        handlePurchaseClick(total);
-        simulatePriceChange();
-      }}>
+        <button onClick={() => 
+        handlePurchaseClick(total)}>
         Simular Pago
       </button>
       </header>
