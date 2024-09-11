@@ -1,24 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import ReactGA from 'react-ga4';
+import { TrackGoogleAnalitycsEvent } from './analytics';
 
-const handleWhatsAppClick = (event) => {
-  event.preventDefault();
-  console.log("WhatsApp button clicked");
-  ReactGA.event({
-    category: 'Button',
-    action: 'click',
-    label: 'whatsapp_button'
-  });
-  window.open('https://wa.me/527861345980', '_blank');
-}
 
 
 
 
 function App() {
-  ReactGA.initialize('G-KEV0Q9Z80R')
-
+  const handleTestClick = () => {
+    // Aquí llamas a la función de seguimiento de eventos
+    TrackGoogleAnalitycsEvent('Button', 'Click', 'Prueba Button');
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -36,7 +28,7 @@ function App() {
         </a>
       </header>
 
-      <a href="https://wa.me/522212311313" className="float" target="_blank" id="whatsapp-in-public" onClick={handleWhatsAppClick}>
+      <a href="https://wa.me/522212311313" className="float" target="_blank" id="whatsapp-in-public" onClick={handleTestClick}>
       <i className="fa fa-whatsapp my-float"></i>
     </a>
     </div>
