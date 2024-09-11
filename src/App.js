@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const [total, setTotal] = useState(100.00); 
+  const [total, setTotal] = useState(350.00); 
   const handleTestClick = () => {
     // Aquí llamas a la función de seguimiento de eventos
     TrackGoogleAnalitycsEvent('Button', 'Click', 'Prueba Button');
@@ -43,7 +43,7 @@ const handlePurchaseClick = (total) => {
                 </button>
       </header>
 
-      <a href="https://wa.me/522212311313" className="float" target="_blank" id="whatsapp-in-public" onClick={handleTestClick}>
+      <a href="https://wa.me/522212311313" className="float" target="_blank" id="whatsapp-in-public" onClick={TrackWhatsAppClick}>
       <i className="fa fa-whatsapp my-float"></i>
     </a>
     </div>
