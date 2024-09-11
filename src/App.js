@@ -19,6 +19,13 @@ const handlePurchaseClick = (total) => {
   TrackGoogleAnalitycsEvent('Purchase', 'purchase', 'Purchase Event', total);
   console.log(`Processing payment of $${total}`);
 };
+
+const simulatePriceChange = () => {
+  // Genera un número aleatorio entre 1 y 50
+  const randomIncrement = (Math.random() * 50).toFixed(2);
+  // Actualiza el total sumando el valor aleatorio al total actual
+  setTotal((prevTotal) => (parseFloat(prevTotal) + parseFloat(randomIncrement)).toFixed(2));
+};
   return (
     <div className="App">
       <header className="App-header">
@@ -35,9 +42,13 @@ const handlePurchaseClick = (total) => {
           Learn React
         </a>
         <button onClick={TrackWhatsAppClick}>click her</button>
-        <button onClick={() => handlePurchaseClick(total)}>
-                    Simular Pago
-                </button>
+        <h2>Total: ${total}</h2>
+        <button onClick={() => {
+        handlePurchaseClick(total);
+        simulatePriceChange();
+      }}>
+        Simular Pago
+      </button>
       </header>
 
       <a href="https://wa.me/522212311313" className="float" target="_blank" id="whatsapp-in-public" onClick={TrackWhatsAppClick}>
