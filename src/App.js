@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 function App() {
-  const [total, setTotal] = useState(350.00); 
+  const [total, setTotal] = useState(15); 
  
 
   const TrackWhatsAppClick = () => {
@@ -16,8 +16,8 @@ function App() {
 
 const handlePurchaseClick = () => {
   // Genera un número aleatorio entre 1 y 50 para cambiar el valor total
-  const randomIncrement = (Math.random() * 50).toFixed(2);
-  const newTotal = (parseFloat(total) + parseFloat(randomIncrement)).toFixed(2);
+  const randomIncrement = (Math.random() * 50).toFixed();
+  const newTotal = (parseFloat(total) + parseFloat(randomIncrement)).toFixed();
 
   // Actualiza el total con el nuevo valor
   setTotal(newTotal);
